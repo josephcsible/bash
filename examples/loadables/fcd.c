@@ -12,6 +12,7 @@
 #include <errno.h>
 
 #include "loadables.h"
+#include "flags.h"
 
 #if !defined (errno)
 extern int errno;
@@ -78,6 +79,14 @@ fcd_builtin (list)
      WORD_LIST *list;
 {
   intmax_t fd;
+
+#if defined (RESTRICTED_SHELL)
+  if (restricted)
+    {
+      sh_restricted ((char *)NULL);
+      return (EXECUTION_FAILURE);
+    }
+#endif /* RESTRICTED_SHELL */
 
   CHECK_HELPOPT (list);
 
