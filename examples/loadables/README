@@ -58,6 +58,7 @@ pathchk.c	Check pathnames for validity and portability.
 print.c		Loadable ksh-93 style print builtin.
 printenv.c	Minimal builtin clone of BSD printenv(1).
 push.c		Anyone remember TOPS-20?
+readwrite.c	Undo readonly.
 realpath.c	Canonicalize pathnames, resolving symlinks.
 rm.c		Remove files and directories.
 rmdir.c		Remove directory.
